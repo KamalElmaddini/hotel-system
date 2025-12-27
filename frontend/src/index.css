@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-gray-50 text-gray-800;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .font-sans {
+    font-family: 'Lato', sans-serif;
+  }
+
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .text-gold {
+    color: #d69e2e;
+  }
+
+  .bg-navy {
+    background-color: #1a202c;
+  }
+
+  .btn-primary {
+    @apply bg-[#1a202c] text-white px-6 py-3 rounded-none uppercase tracking-widest text-sm font-bold hover:bg-[#2d3748] transition-all duration-300 border border-[#1a202c];
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-[#1a202c] px-6 py-3 rounded-none uppercase tracking-widest text-sm font-bold hover:bg-[#1a202c] hover:text-white transition-all duration-300 border border-[#1a202c];
+  }
+
+  .input-luxury {
+    @apply w-full border-b border-gray-300 bg-transparent py-3 px-2 text-gray-800 outline-none focus:border-[#d69e2e] transition-colors duration-300 placeholder-gray-400 font-light;
+  }
+}

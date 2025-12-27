@@ -1,0 +1,51 @@
+services:
+  api-gateway:
+    build: ./backend/api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - hotel-network
+    depends_on:
+      - booking-service
+      - room-service
+
+  user-service:
+    build:
+      context: ./backend/user-service
+      dockerfile: Dockerfile
+    container_name: hotel-system-user-service
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - hotel-network
+
+  booking-service:
+    build: ./backend/booking-service
+    ports:
+      - "8081:8081"
+    networks:
+      - hotel-network
+
+  room-service:
+    build: ./backend/room-service
+    ports:
+      - "8082:8082"
+    networks:
+      - hotel-network
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"
+    networks:
+      - hotel-network
+    depends_on:
+      - api-gateway
+
+networks:
+  hotel-network:
+    driver: bridge

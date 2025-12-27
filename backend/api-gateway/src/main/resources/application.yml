@@ -1,0 +1,41 @@
+server:
+  port: 10000
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+      routes:
+        - id: booking-service
+          uri: http://localhost:10002
+          predicates:
+            - Path=/api/bookings/**
+
+        - id: room-service
+          uri: http://localhost:10004
+          predicates:
+            - Path=/api/rooms/**
+
+        - id: user-service
+          uri: http://localhost:10001
+          predicates:
+            - Path=/api/users/**
+
+        - id: auth-service
+          uri: http://localhost:10001
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - AuthenticationFilter
