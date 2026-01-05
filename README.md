@@ -79,7 +79,7 @@ We have provided a unified startup script to launch the entire ecosystem.
 
 ## 📸 Screenshots
 
-![Chess Game Board](./public/screenshot.png)
+![Hotel Management System](./public/Screenshot1.png)
 
 ## 🤝 Contribution
 Contributions are welcome! Please fork the repository and submit a pull request.
