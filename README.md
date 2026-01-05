@@ -79,7 +79,7 @@ We have provided a unified startup script to launch the entire ecosystem.
 
 ## 📸 Screenshots
 
-*(Add your screenshots here)*
+![Chess Game Board](./public/screenshot.png)
 
 ## 🤝 Contribution
 Contributions are welcome! Please fork the repository and submit a pull request.
