@@ -79,7 +79,7 @@ We have provided a unified startup script to launch the entire ecosystem.
 
 ## 📸 Screenshots
 
-![Hotel Management System](./public/Screenshot1.png)
+![Hotel Management System](./frontend/public/Screenshot2.png)
 
 ## 🤝 Contribution
 Contributions are welcome! Please fork the repository and submit a pull request.
